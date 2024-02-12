@@ -1,4 +1,4 @@
-public class Serie extends Audiovisual {
+public class Serie extends Audiovisual implements Comparable<Serie> {
     private int temporada;
 
     public Serie(String titulo, int duracion, int temporada) {
@@ -12,5 +12,10 @@ public class Serie extends Audiovisual {
 
     public void setTemporada(int temporada) {
         this.temporada = temporada;
+    }
+
+    @Override
+    public int compareTo(Serie otraSerie) {
+        return this.getTitulo().compareTo(otraSerie.getTitulo());
     }
 }
